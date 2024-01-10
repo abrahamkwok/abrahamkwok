@@ -1,43 +1,572 @@
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-body, html {
-  height: 100%;
-  color: #777;
-  line-height: 1.8;
+/* Fonts */
+@font-face {
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Sofia Pro'), url('https://fonts.cdnfonts.com/s/14903/Sofia Pro Regular Az.woff') format('woff');
 }
-
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+@font-face {
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 250;
+    src: local('Sofia Pro'), url('https://fonts.cdnfonts.com/s/14903/Sofia Pro ExtraLight Az.woff') format('woff');
 }
-
-/* First image (Logo. Full height) */
-.bgimg-1 {
-  background-image: url('/w3images/parallax1.jpg');
-  min-height: 100%;
+@font-face {
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 250;
+    src: local('Sofia Pro'), url('https://fonts.cdnfonts.com/s/14903/Sofia Pro UltraLight Az.woff') format('woff');
 }
-
-/* Second image (Portfolio) */
-.bgimg-2 {
-  background-image: url("/w3images/parallax2.jpg");
-  min-height: 400px;
+@font-face {
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Sofia Pro'), url('https://fonts.cdnfonts.com/s/14903/Sofia Pro Light Az.woff') format('woff');
 }
-
-/* Third image (Contact) */
-.bgimg-3 {
-  background-image: url("/w3images/parallax3.jpg");
-  min-height: 400px;
+@font-face {
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Sofia Pro'), url('https://fonts.cdnfonts.com/s/14903/Sofia Pro Medium Az.woff') format('woff');
 }
-
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-    min-height: 400px;
+@font-face {
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Sofia Pro'), url('https://fonts.cdnfonts.com/s/14903/Sofia Pro Semi Bold Az.woff') format('woff');
+}
+@font-face {
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Sofia Pro'), url('https://fonts.cdnfonts.com/s/14903/Sofia Pro Bold Az.woff') format('woff');
+}
+@font-face {
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Sofia Pro'), url('https://fonts.cdnfonts.com/s/14903/Sofia Pro Black Az.woff') format('woff');
+}
+html {
+    scroll-behavior: smooth;
   }
+
+body {
+    font-family: 'Sofia Pro', sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin: 0px;
 }
+
+div {
+    display: block;
+}
+
+.nav_items {
+    display: flex;
+    flex-direction: row;
+}
+
+#page-container{
+    position: relative;
+    background-color: white;
+    min-height: 100vh;
+    overflow: hidden;
+    display: block;
+    padding-bottom: 35rem;
+}
+
+#opening_page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 1250px;
+    background-color: black;
+}
+
+#middle_page {
+    padding-bottom: 12em;
+}
+
+#end_page {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 500px;
+    background-color: black;
+    overflow: hidden;
+}
+
+
+.work-container {
+    width: 100%;
+    max-width: 1750px;
+    margin: 0 auto;
+    padding-top: 9em;
+    overflow: hidden;
+
+    opacity: 1;
+	animation-name: fadeIn;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+section {
+    display: block;
+}
+
+/* Navbar */
+#navbar {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+
+    min-width: 350px;
+    /* min-width: 500px; */
+
+    right: 2%;
+
+    z-index: 1;
+
+    opacity: 1;
+	animation-name: fadeInTop;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+.nav_options {
+    color:white;
+    text-decoration: none;
+
+    margin-top: 25px;
+    margin-right: 55px;
+
+    font-family: 'Sofia Pro', sans-serif;
+    font-weight: 800;
+    font-size: 19px;
+
+    transition: .3s linear, box-shadow .15s linear 0s;
+    background-size: 0%;
+    background-position: 0 0.75em;
+}
+
+.nav_options:hover {
+    cursor: pointer;
+    background-size: 100%;
+    background-image: linear-gradient(to right, #628DB2, #71BFF8,#3AA16D); 
+    background-repeat: no-repeat;  
+}
+
+@keyframes fadeInTop {
+	0% {
+		opacity: 0;
+        transform: translateY(-20px);
+
+	}
+	100% {
+		opacity: 1;
+        transform: translateX(0);
+	}
+}
+
+/* Intro */
+#intro-container {
+    position: absolute;
+    top: 20%;
+    margin: auto 112px;
+    min-width: 500px;
+    max-width: 650px;
+    margin-bottom: 32px;
+    padding: 32px;
+
+    color: white;
+
+    opacity: 1;
+	animation-name: fadeInLeft;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+#intro-container h1 {
+    margin-top: -2%;
+}
+
+#intro-container h2 {
+    margin-top: -3%;
+}
+
+#intro-container h3 {
+    margin-bottom: 2%;
+}
+
+#job {
+    transition: 1s;
+    font-weight: bold;
+    color: #002D9C;
+}
+
+#job:hover {
+    cursor: pointer;
+    color: #628DB2;
+}
+
+@keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+        transform: translateX(-30px);
+
+	}
+	100% {
+		opacity: 1;
+        transform: translateX(0);
+	}
+}
+
+/* Fonts */
+#head1 {
+    font-family: 'Sofia Pro', sans-serif;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 68px;
+}
+
+#head2 {
+    font-family: 'Sofia Pro', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+#head3 {
+    color: #628DB2;
+    font-family: 'Sofia Pro', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+h4 {
+    font-family: 'Sofia Pro', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+}
+
+h5 {
+    color: #9e9e9e;
+    font-family: 'Sofia Pro', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    
+}
+
+h6 {
+    font-family: 'Sofia Pro', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+p {
+    color: #3f3f3f;
+    font-family: 'Sofia Pro', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+}
+
+/* Button */
+button {
+    background-color: black;
+	color: white;
+
+    font-family: 'Sofia Pro', sans-serif;
+	font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    letter-spacing: 1px;
+
+    margin-top: 10px;
+	border-radius: 8px;
+    border: 1px solid #ffffff;    
+	width: 160px;
+    height: 55px;
+
+    transition: 0.4s ease-in-out;
+    animation: fadeIn 0.8s;
+
+}
+
+button:hover {
+	background-color: white;
+    color: black;
+    box-shadow: 2px 2px 8px 1px #ffffff;
+	cursor: grab;
+}
+
+button:active {
+    cursor: grabbing;
+}
+
+/* Explore Block */
+#explore_block {
+    position: absolute;
+    bottom: 0;
+    right: 80px;
+
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+
+    max-height: 400px;
+
+    opacity: 1;
+	animation-name: fadeIn;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+.sideway_text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+
+    letter-spacing: 5px;
+    font-size: 16px;
+    font-family: 'Sofia Pro', sans-serif;
+    font-weight: 400;
+    line-height: 30px;
+
+    color: white;
+}
+
+.vertical_line_outside {
+    position: relative;
+    width: 2px;
+    height: 250px;
+    
+    justify-self: flex-end;
+    overflow: hidden;
+
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.vertical_line {
+    position: absolute;
+	width: 2px;
+	height: 70px;
+
+    background: white;
+    opacity: 1;
+
+    transition: all 1s linear;
+	animation-name: vertical-move;
+	animation-duration: 4s;
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes vertical-move {
+    0% {
+        top: -10px;
+    }
+    100% {
+        top: 300px;
+    }
+}
+
+/* Waves */
+.waves {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-height: 15vh;
+    margin-bottom: -7px;
+    min-height: 10vh;
+}
+
+.waves_bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-height: 15vh;
+    margin-bottom: -7px;
+    min-height: 10vh;
+    transform: scaleX(-1);
+}
+
+#gentle-wave {
+    width: 100%;
+}
+
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+0% {
+    transform: translate3d(-90px,0,0);
+    }
+100% { 
+    transform: translate3d(85px,0,0);
+    }
+}
+
+/* Work */
+#work_header {
+    position: relative;
+    top: 0%;
+    margin-left: 110px;
+    margin-bottom: 10px;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+}
+
+.work_picture {
+   /* position: relative; */
+   top: 10px;
+   margin-left: 110px;
+   margin-right: 110px;
+}
+
+.work_picture_box {
+    max-height: 800px;
+}
+
+.picture:hover {
+    box-shadow: 12px 12px #628DB2;
+    transition: all 0.3s;
+    border-radius: 8px;
+}
+
+.picture {
+    /* display: block; */
+    height: auto;
+    width: 100%;
+    max-height: 800px;    
+    max-width: 1526px;
+
+    border-radius: 8px;
+    border: 1px solid #ffffff;  
+
+    transition: all 0.3s;
+}
+
+.work_details {
+    margin-top: 30px;
+    margin-left: 110px;
+}
+
+.work_details p, .work_details h5, .work_details h6 {
+    margin-block-start: 0.5em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+    max-width: 900px;
+}
+
+.work_details p {
+    margin-top: -15px;
+    margin-right: 120px;
+}
+
+/*Social Media*/
+ul {
+    display: flex;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+  }
+  
+  ul li {
+    list-style: none;
+  }
+  
+  ul li a {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    text-align: center;
+    line-height: 80px;
+    font-size: 35px;
+    margin: 0 10px;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #fff;
+    z-index: 1;
+  }
+  
+  ul li a .icon {
+    position: relative;
+    color: #262626;
+    transition: .5s;
+    z-index: 3;
+  }
+  
+  ul li a:hover .icon {
+    color: #fff;
+    transform: rotateY(360deg);
+  }
+  
+  ul li a:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f00;
+    transition: .5s;
+    z-index: 2;
+  }
+  
+  ul li a:hover:before {
+    top: 0;
+  }
+  
+  ul li:nth-child(1) a:before{
+    background: #0077b5;
+  }
+  
+  ul li:nth-child(2) a:before{
+    background: #582879;
+  }
+  
+  ul li:nth-child(3) a:before {
+    background: #dd4b39;
+  }
+  
