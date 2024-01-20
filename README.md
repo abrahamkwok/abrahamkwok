@@ -1,4 +1,6 @@
 ### Hi there 👋
+This is just my personal website! 
+https://abrahamkwok.github.io/abrahamkwok/
 
 <!--
 **abrahamkwok/abrahamkwok** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
